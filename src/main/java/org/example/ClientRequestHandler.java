@@ -20,6 +20,7 @@ public class ClientRequestHandler implements Runnable {
 
     @Override
     public void run() {
+        //현재실행되는 스레드의 이름 찍어보기
         logger.info("[ClientRequestHandler] new client {} started.", Thread.currentThread().getName());
         try (InputStream in = clientSocket.getInputStream(); OutputStream out = clientSocket.getOutputStream()) {
             BufferedReader br = new BufferedReader(new InputStreamReader(in, StandardCharsets.UTF_8));
